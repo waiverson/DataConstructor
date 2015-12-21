@@ -34,6 +34,6 @@ class Generater(object):
 
 if __name__ == '__main__':
 
-    # Generater(CSVModel, processor=Processor.csv_processor('csv')).produce()
+    Generater(CSVModel, processor=Processor.csv_processor('csv')).produce()
     # Generater(Salesforce, processor=Processor.mongodb_processor('mongo')).produce()
-     Generater(CSVModel, processor=Processor.xls_processor('xls')).produce()
+    # Generater(CSVModel, processor=Processor.xls_processor('xls')).produce()
