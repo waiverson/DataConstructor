@@ -2,11 +2,8 @@
 # encoding:utf-8
 __author__ = 'xyc'
 
-FX_USER_ID = (("00528000001X1unAAC", "23910436"),
-              )
 
-
-FX_ACCOUNT_USERNAME = ("2215649033@qq.com", "ytuytu@qq.com")
+FX_ACCOUNT_USERNAME = ("2215649033@qq.com", "ytuytu@qq.com", 'dangwuque@123.com')
 
 DATATABLE = "opportunity"
              #"cases",
@@ -24,8 +21,8 @@ DBNAME = "swarm_dw"
 PGSQL = ("172.20.0.214", 5432, 'postgres', 'postgres', 'swarm')
 
 # 批量插入
-BATCH = 1
-DATAROW = 100
+BATCH = 10
+DATAROW = 10000
 
 # 单位天 创建时间和解决时间的间隔
 TIMEINTERVAL = 30

@@ -7,14 +7,17 @@ from data_constructor.conf import settings
 from data_constructor.db_faker.factory import Factory
 from data_constructor.data_models.utils import Utils
 from data_constructor.data_models.biz_data import Provider
+from data_constructor.dbhandler.pgsql2 import Pgsql
 
 class BaseModel(object):
 
     provider = Provider
+    settings = settings
 
     def __init__(self):
 
         self.interval = settings.TIMEINTERVAL * 24 * 60 * 60  # 换算成秒
+        self.fx_account = settings.FX_ACCOUNT_USERNAME[2]
         self.base_columns = [
                 "fiscal_year",
                 "kh_Name",
@@ -34,6 +37,11 @@ class BaseModel(object):
             ]
 
         self.faker = Factory.create()
+
+    def query(self,sql):
+        host, port, user, password, database = settings.PGSQL
+        pg = Pgsql(host, port, user, password, database)
+        return pg.execute_sql(sql)[0][0]
 
     def assemble(self,):
         # 构造基础的数据集

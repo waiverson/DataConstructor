@@ -12,7 +12,7 @@ class Generater(object):
 
     def __init__(self, model=None, processor=None):
 
-        # 组合数据模型（model），和输出处理器（processor）
+        # 组合数据模型（model）和输出处理器（processor）
         self.batch = settings.BATCH
         self.row = settings.DATAROW
         self.model = model()
@@ -34,6 +34,11 @@ class Generater(object):
 
 if __name__ == '__main__':
 
-    Generater(CSVModel, processor=Processor.csv_processor('csv')).produce()
+    # csv文件数据构造，导入到csv文件
+    # Generater(CSVModel, processor=Processor.csv_processor('csv')).produce()
+    # salesforce数据导入到mongo
     # Generater(Salesforce, processor=Processor.mongodb_processor('mongo')).produce()
+    # csv文件构造导入到mongo
+     Generater(CSVModel, processor=Processor.mongodb_processor('mongo')).produce()
+    # csv文件构造，导入到xls
     # Generater(CSVModel, processor=Processor.xls_processor('xls')).produce()
