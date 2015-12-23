@@ -26,13 +26,11 @@ class Salesforce(BaseModel):
 
     def __init__(self):
         super(Salesforce, self).__init__()
-        self._account_name = "TEST DATA"
         sql = '''
               select app_user_id from core_orguserappconfig
               where  app_id = 1
               and user_id = (select id from core_orguser where user_name = '{FX_ACCOUNT_USERNAME}')
               '''.format(FX_ACCOUNT_USERNAME=self.fx_account)
-        print sql
         self._FX_SF_USER_ID = self.query(sql)
 
     def spawn(self,):

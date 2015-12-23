@@ -32,8 +32,7 @@ class BaseModel(object):
                 "Name",
                 "Type",
                 "fx_campaign_name",
-                "fx_owner_name",
-                "fx_ap_id",
+                "fx_owner_name"
             ]
 
         self.faker = Factory.create()
@@ -62,7 +61,7 @@ class BaseModel(object):
                      self.faker.company(), #name
                      BaseModel.provider.type_sales(),    #Type
                      {}, #fx_campaign_name
-                     "TEST_DATA", #fx_owner_name
+                     "TOM", #fx_owner_name
             ]
 
         return Utils.to_dict(self.base_columns, values)
