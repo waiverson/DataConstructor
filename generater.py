@@ -39,6 +39,6 @@ if __name__ == '__main__':
     # salesforce数据导入到mongo
     # Generater(Salesforce, processor=Processor.mongodb_processor('mongo')).produce()
     # csv文件构造导入到mongo
-     Generater(CSVModel, processor=Processor.mongodb_processor('mongo')).produce()
+    Generater(CSVModel, processor=Processor.mongodb_processor('mongo')).produce()
     # csv文件构造，导入到xls
     # Generater(CSVModel, processor=Processor.xls_processor('xls')).produce()

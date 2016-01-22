@@ -21,19 +21,19 @@ class MockData(object):
     """
 
     TYPE_SALES = ["New Customer", "Existing Customer - Upgrade",
-                  "OldCustomer", "null", "Existing Customer - Replacement", {}]
+                  "OldCustomer", "null", "Existing Customer - Replacement"]
 
     STAGE_NAME = ["Qualification", "Negotiation/Review", "Closed Won", "Id. Decision Makers", "Proposal/Price Quote",
                   "Needs Analysis", "Value Proposition", "Prospecting", "Perception Analysis"]
 
-    KH_TYPE = ["Prospect", "Customer - Channel", "Customer - Direct", {}, "Customer"]
+    KH_TYPE = ["Prospect", "Customer - Channel", "Customer - Direct","Customer"]
 
     KH_INDUSTRY = ["Construction", "Consulting", "Energy", "Transportation", "Biotechnology",
                    "Hospitality", "Electronics", "Education", "Apparel", "Environmental",
                    "Manufacturing", "Media", "Technology", "Government"]
-    LEAD_SOURCE = ["WEB", "PAPER", "A", "B", "C", {}]
+    LEAD_SOURCE = ["WEB", "PAPER", "A", "B", "C"]
 
-    KH_RATING = ["Hot", {}, "Cold", "Warm"]
+    KH_RATING = ["Hot", "Cold", "Warm"]
 
     STATUS = ["new", "open", "pending", "resolved"]
 

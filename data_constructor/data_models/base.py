@@ -17,7 +17,7 @@ class BaseModel(object):
     def __init__(self):
 
         self.interval = settings.TIMEINTERVAL * 24 * 60 * 60  # 换算成秒
-        self.fx_account = settings.FX_ACCOUNT_USERNAME[2]
+        self.fx_account = settings.FX_ACCOUNT_USERNAME[0]
         self.base_columns = [
                 "fiscal_year",
                 "kh_Name",

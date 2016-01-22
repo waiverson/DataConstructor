@@ -12,7 +12,7 @@ class Utils(object):
     @classmethod
     def created_time(cls, faker):
 
-        return faker.date_time_between_dates(datetime_start=datetime(2010, 8, 1), datetime_end=datetime(2015, 11, 1))
+        return faker.date_time_between_dates(datetime_start=datetime(2010, 8, 1), datetime_end=datetime(2016, 2, 1))
 
     @classmethod
     def end_time(cls, created_time, interval=5184000):
