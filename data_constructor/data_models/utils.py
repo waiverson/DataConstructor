@@ -1,7 +1,7 @@
 # coding=utf-8
 
 from ..db_faker.providers.date_time import *
-from datetime import datetime
+from datetime import datetime, date, timedelta
 import random
 
 
@@ -10,9 +10,9 @@ class Utils(object):
     _SEQ = 0
 
     @classmethod
-    def created_time(cls, faker):
-
-        return faker.date_time_between_dates(datetime_start=datetime(2010, 8, 1), datetime_end=datetime(2016, 2, 1))
+    def created_time(cls, faker, year):
+        datetime_start = date.today()-timedelta(days=(year * 365))
+        return faker.date_time_between_dates(datetime_start=datetime_start, datetime_end=datetime.now())
 
     @classmethod
     def end_time(cls, created_time, interval=5184000):

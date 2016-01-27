@@ -16,15 +16,17 @@ CSV = 101
 
 # MONGODB
 MONGODB = ("172.20.0.215", 27017)
-DBNAME = "swarm_dw"
+DBNAME = "swarm_dw7"
 
 PGSQL = ("172.20.0.216", 5432, 'postgres', '111111', 'swarm')
 
 # 批量插入
-BATCH = 10
+BATCH = 1
 DATAROW = 10000
 
-# 单位天 创建时间和解决时间的间隔
+# 单位 年，创建时间相对应当前系统时间往前
+YEAR = 5
+# 单位 天 创建时间和解决时间的间隔
 TIMEINTERVAL = 30
 
 #RESTAPI

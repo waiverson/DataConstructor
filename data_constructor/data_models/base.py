@@ -17,6 +17,7 @@ class BaseModel(object):
     def __init__(self):
 
         self.interval = settings.TIMEINTERVAL * 24 * 60 * 60  # 换算成秒
+        self.year = settings.YEAR
         self.fx_account = settings.FX_ACCOUNT_USERNAME[0]
         self.base_columns = [
                 "fiscal_year",
@@ -45,7 +46,7 @@ class BaseModel(object):
     def assemble(self,):
         # 构造基础的数据集
 
-        _created_time = Utils.created_time(self.faker)
+        _created_time = Utils.created_time(self.faker, self.year)
         _end_time = Utils.end_time(_created_time, interval=self.interval)
 
         values = [2015,  #fiscal_year
