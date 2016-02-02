@@ -16,7 +16,7 @@ class AbsPlugin(object):
     def load(cls):
         pass
 
-
+# 此插件用来调用acs服务notice接口完成从swarm_dw到分析缓存的数据转移
 class Desk51Plugin(AbsPlugin):
 
     @staticmethod
