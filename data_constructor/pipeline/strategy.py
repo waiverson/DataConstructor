@@ -19,6 +19,16 @@ class OutStrategy(object):
         pass
 
 
+class ETLStrategy(object):
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def etl(self, data_list):
+        pass
+
+
+# 模拟数据的输出策略，包含mongo，csv，xls，rest
 class MongoStrategy(OutStrategy):
 
     def __init__(self):
@@ -124,3 +134,13 @@ class RestAPIStrategy(OutStrategy):
         auth = self.auth()
         for data in data_list:
             self.post(data, auth)
+
+
+# 定义etl策略, 包含第三方接口，
+class ThirdStrategy(ETLStrategy):
+
+    def __init__(self,):
+        pass
+
+    def etl(self, data_list):
+        pass
