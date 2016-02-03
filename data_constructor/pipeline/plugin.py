@@ -29,10 +29,15 @@ class Desk51Plugin(AbsPlugin):
     def load(cls,):
         fx_account = settings.FX_ACCOUNT_USERNAME[0]
         url = settings.ACS_URL
-        tag = settings.CSV
         sql = '''
             select id from core_orguser where user_name = '{FX_ACCOUNT_USERNAME}'
           '''.format(FX_ACCOUNT_USERNAME=fx_account)
-        data = {'uid': Desk51Plugin.query(sql), 'ap_id': tag}
+        uid = Desk51Plugin.query(sql)
+        # 触发CSV数据的转移
+        data = {'uid': uid, 'ap_id': settings.CSV}
+        r = requests.post(url, data=data)
+        print r.text
+        # 触发salesforce数据的转移
+        data = {'uid': uid, 'ap_id': settings.SALESFORCE}
         r = requests.post(url, data=data)
         print r.text
