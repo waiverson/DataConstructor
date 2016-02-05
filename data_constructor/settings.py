@@ -21,8 +21,8 @@ DBNAME = "swarm_dw"
 PGSQL = ("172.20.0.197", 5432, 'postgres', '111111', 'swarm')
 
 # 批量插入
-BATCH = 1
-DATAROW = 10
+BATCH = 2
+DATAROW = 10000
 
 # 单位 年，创建时间相对应当前系统时间往前
 YEAR = 5
