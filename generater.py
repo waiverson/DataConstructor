@@ -53,10 +53,10 @@ class Generater(object):
 if __name__ == '__main__':
 
     # csv文件数据构造，导入到csv文件
-    Generater(CSVModel, out_processor=OutProcessor.csv_processor('csv')).produce()
+    # Generater(CSVModel, out_processor=OutProcessor.csv_processor('csv')).produce()
     # salesforce数据导入到mongo
-    # Generater(Salesforce, out_processor=OutProcessor.mongodb_processor('mongo')).produce()
+    # Generater(Salesforce, out_processor=OutProcessor.mongodb_processor('mongo')).produce().load()
     # csv文件构造导入到mongo
-    # Generater(CSVModel, out_processor=OutProcessor.mongodb_processor('mongo')).produce().load()
+    Generater(CSVModel, out_processor=OutProcessor.mongodb_processor('mongo')).produce().load()
     # csv文件构造，导入到xls
     # Generater(CSVModel, out_processor=OutProcessor.xls_processor('xls')).produce()

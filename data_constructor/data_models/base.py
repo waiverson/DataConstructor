@@ -41,7 +41,12 @@ class BaseModel(object):
     def query(self,sql):
         host, port, user, password, database = settings.PGSQL
         pg = Pgsql(host, port, user, password, database)
-        return pg.execute_sql(sql)[0][0]
+        try:
+            rs = pg.execute_sql(sql)[0][0]
+            return rs
+        except IndexError,e:
+            print e
+            return 'None'
 
     def assemble(self,):
         # 构造基础的数据集
@@ -49,7 +54,7 @@ class BaseModel(object):
         _created_time = Utils.created_time(self.faker, self.year)
         _end_time = Utils.end_time(_created_time, interval=self.interval)
 
-        values = [2015,  #fiscal_year
+        values = [2016,  #fiscal_year
                      self.faker.company(), # kh_name
                      _created_time, # createdate
                      _end_time, #closedate
