@@ -3,7 +3,7 @@
 __author__ = 'xyc'
 
 
-FX_ACCOUNT_USERNAME = ("2215649033@qq.com",'liuweiwei5@163.com','dangwuque001@163.com', "ytuytu@qq.com", 'dangwuque@123.com')
+FX_ACCOUNT_USERNAME = ("xxx@qq.com",'aaa@163.com','ccc@163.com', "bbb@qq.com", 'ddd@123.com')
 
 DATATABLE = "opportunity"
              #"cases",
@@ -15,10 +15,10 @@ DESK = 2
 CSV = 101
 
 # MONGODB
-MONGODB = ("172.20.0.201", 27017)
-DBNAME = "swarm_dw"
+MONGODB = ("172.20.0.xxx", 27017)
+DBNAME = "xxx"
 
-PGSQL = ("172.20.0.197", 5432, 'postgres', '111111', 'swarm')
+PGSQL = ("172.20.0.xxx", 5432, 'postgres', '111111', 'xxx')
 
 # 批量插入
 BATCH = 2
@@ -30,7 +30,7 @@ YEAR = 5
 TIMEINTERVAL = 30
 
 #ACS API
-ACS_URL = 'http://172.20.0.199:16004/WEBAPI/acs/data/analysis/notice'
+ACS_URL = 'rest_uri'
 
 #RESTAPI
 USERNAME = 'TOM'
